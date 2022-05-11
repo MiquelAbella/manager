@@ -126,7 +126,7 @@ export const Login = ({ setUid, setUser }) => {
       </div>
       <div className="tutorial" id="tutorial">
         <h1 className="tutorial-title">Com funciona?</h1>
-        <a target="_blank" href="http://localhost:3001">
+        <a target="_blank" href="https://miquelabella.github.io/elder/">
           <div className="step-container">
             <h1>
               {" "}
