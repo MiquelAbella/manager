@@ -1,0 +1,26 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 8vh;
+  width: 100%;
+  background-color: rgb(180, 180, 180);
+  color: rgb(40, 40, 40);
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+li {
+  font-size: 1.5vw;
+  list-style: none;
+  margin-right: 5vw;
+}
