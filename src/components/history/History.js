@@ -24,6 +24,7 @@ export const History = ({ user }) => {
                 <p>text: {moment[1]}</p>
                 <p>
                   <a
+                    target="_blank"
                     href={`https://www.google.com/search?q=${moment[0][0]}+%2C+${moment[0][1]}`}
                   >
                     {moment[0][0]} , {moment[0][1]}
