@@ -22,10 +22,13 @@ function App() {
           />
         </Route>
         <Route path="/form" element={<ProtectedRoutes uid={uid} />}>
-          <Route path="/form" element={<Form user={user} />} />
+          <Route path="/form" element={<Form user={user} setUid={setUid} />} />
         </Route>
         <Route path="/history" element={<ProtectedRoutes uid={uid} />}>
-          <Route path="/history" element={<History user={user} />} />
+          <Route
+            path="/history"
+            element={<History user={user} setUid={setUid} />}
+          />
         </Route>
       </Routes>
     </div>

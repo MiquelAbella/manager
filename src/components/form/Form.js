@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./form.css";
 import Swal from "sweetalert2";
 
-export const Form = ({ user }) => {
+export const Form = ({ user, setUid }) => {
   const [isLoading, setIsLoading] = useState(false);
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -315,7 +315,7 @@ export const Form = ({ user }) => {
             <Link to="/history">
               <li>Històric</li>
             </Link>
-            <li>Surt</li>
+            <li onClick={()=>{setUid('')}}>Surt</li>
           </ul>
         </nav>
         <p>

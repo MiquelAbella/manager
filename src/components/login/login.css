@@ -159,7 +159,7 @@
   height: 70%;
 }
 
-a {
+.tutorial-link {
   text-decoration: none;
   color: inherit;
 }

@@ -126,7 +126,11 @@ export const Login = ({ setUid, setUser }) => {
       </div>
       <div className="tutorial" id="tutorial">
         <h1 className="tutorial-title">Com funciona?</h1>
-        <a target="_blank" href="https://miquelabella.github.io/elder/">
+        <a
+          className="tutorial-link"
+          target="_blank"
+          href="https://miquelabella.github.io/elder/"
+        >
           <div className="step-container">
             <h1>
               {" "}
@@ -147,7 +151,11 @@ export const Login = ({ setUid, setUser }) => {
           </h1>
           <img src={loginImg} />
         </div>
-        <a target="_blank" href="http://localhost:3001">
+        <a
+          className="tutorial-link"
+          target="_blank"
+          href="http://localhost:3001"
+        >
           <div className="step-container">
             <h1>
               3. Escriu les rutines i recordatoris al planificador setmanal
