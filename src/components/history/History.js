@@ -4,18 +4,22 @@ import { Link } from "react-router-dom";
 
 export const History = ({ user, setUid }) => {
   const [commonPlace, setCommonPlace] = useState(() => {
-    let positions = [];
-    for (let i = 0; i < user.history.length; i++) {
-      positions.push([user.history[i][0][0], user.history[i][0][1]]);
-    }
+    if (user.history) {
+      let positions = [];
+      for (let i = 0; i < user.history.length; i++) {
+        positions.push([user.history[i][0][0], user.history[i][0][1]]);
+      }
 
-    return positions
-      .sort(
-        (a, b) =>
-          positions.filter((v) => v === a).length -
-          positions.filter((v) => v === b).length
-      )
-      .pop();
+      return positions
+        .sort(
+          (a, b) =>
+            positions.filter((v) => v === a).length -
+            positions.filter((v) => v === b).length
+        )
+        .pop();
+    } else {
+      return null;
+    }
   });
 
   let mostCommonPlace = () => {
@@ -92,7 +96,11 @@ export const History = ({ user, setUid }) => {
         </ul>
       </nav>
       <p className="date">
-        <strong>{user.history[0][2]}</strong>
+        {user.history.length ? (
+          <strong>{user.history[0][2]}</strong>
+        ) : (
+          <p>No hi ha res a mostrar</p>
+        )}
       </p>
       {user.history
         ? user.history.map((moment, idx) => {
