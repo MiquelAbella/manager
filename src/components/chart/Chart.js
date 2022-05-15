@@ -35,18 +35,18 @@ export const Chart = ({ setUid, user }) => {
     }
   });
 
-  //   const data = [
-  //     { name: "14-5-22", vegades: 1, amt: 0 },
-  //     { name: "15-5-22", vegades: 3, amt: 0 },
-  //     { name: "16-5-22", vegades: 5, amt: 0 },
-  //     { name: "17-5-22", vegades: 7, amt: 0 },
-  //     { name: "18-5-22", vegades: 9, amt: 0 },
-  //     { name: "19-5-22", vegades: 6, amt: 0 },
-  //     { name: "20-5-22", vegades: 10, amt: 0 },
-  //     { name: "21-5-22", vegades: 4, amt: 0 },
-  //     { name: "22-5-22", vegades: 8, amt: 0 },
-  //     { name: "23-5-22", vegades: 20, amt: 0 },
-  //   ];
+    // const data = [
+    //   { name: "14-5-22", vegades: 1, amt: 0 },
+    //   { name: "15-5-22", vegades: 3, amt: 0 },
+    //   { name: "16-5-22", vegades: 5, amt: 0 },
+    //   { name: "17-5-22", vegades: 7, amt: 0 },
+    //   { name: "18-5-22", vegades: 9, amt: 0 },
+    //   { name: "19-5-22", vegades: 6, amt: 0 },
+    //   { name: "20-5-22", vegades: 10, amt: 0 },
+    //   { name: "21-5-22", vegades: 4, amt: 0 },
+    //   { name: "22-5-22", vegades: 8, amt: 0 },
+    //   { name: "23-5-22", vegades: 20, amt: 0 },
+    // ];
 
   const data = occurrences.map((occ) => {
     return { name: occ[0], vegades: occ[1], amt: 0 };
@@ -74,7 +74,7 @@ export const Chart = ({ setUid, user }) => {
           </li>
         </ul>
       </nav>
-      <h4 style={{ textAlign: "center" }}>GRÀFIC : VEGADES/DIA</h4>
+      <h4 style={{ textAlign: "center", margin:'3vh'}}>GRÀFIC : VEGADES/DIA</h4>
       <ResponsiveContainer>
         <AreaChart
           data={data}

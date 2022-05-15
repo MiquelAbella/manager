@@ -268,3 +268,91 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+  .login-icon {
+    height: 10vh;
+  }
+  .app-name {
+    font-size: 80px;
+  }
+
+  .app-slogan {
+    font-size: 4vw;
+  }
+
+  .down-arrow {
+    transform: translateX(-5vw);
+    font-size: 15vw;
+  }
+
+  .forms-container {
+    z-index: 9999;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .login-form,
+  .register-form {
+    height: 35vh;
+    width: 70%;
+  }
+
+  .login-form input,
+  .register-form input {
+    font-size: 20px;
+    width: 90%;
+  }
+
+  .register-form button,
+  .login-form button {
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid grey;
+    font-size: 15px;
+    width: 50%;
+    margin-top: 1vh;
+  }
+
+  .tutorial {
+    height: 270vh;
+    width: 100%;
+  }
+
+  .tutorial h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .tutorial h4 {
+    width: 80%;
+    text-align: justify;
+    font-size: 15px;
+  }
+
+  .step-container {
+    min-height: 50vh;
+    width: 90vw;
+  }
+
+  .step-container h1 {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .step-container img {
+    height: 50%;
+  }
+
+  .tutorial-link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
