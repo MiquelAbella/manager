@@ -7,6 +7,7 @@ import "./app.css";
 import { Login } from "./components/login/Login";
 import { Form } from "./components/form/Form";
 import { History } from "./components/history/History";
+import { Chart } from "./components/chart/Chart";
 
 function App() {
   const [uid, setUid] = useState(null);
@@ -28,6 +29,12 @@ function App() {
           <Route
             path="/history"
             element={<History user={user} setUid={setUid} />}
+          />
+        </Route>
+        <Route path="/chart" element={<ProtectedRoutes uid={uid} />}>
+          <Route
+            path="/chart"
+            element={<Chart user={user} setUid={setUid} />}
           />
         </Route>
       </Routes>

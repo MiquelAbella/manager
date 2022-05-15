@@ -94,6 +94,9 @@ export const History = ({ user, setUid }) => {
           <Link to="/history">
             <li>Històric</li>
           </Link>
+          <Link to="/chart">
+              <li>Gràfic</li>
+            </Link>
           <li
             onClick={() => {
               setUid("");
