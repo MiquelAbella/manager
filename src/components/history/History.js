@@ -10,6 +10,14 @@ export const History = ({ user, setUid }) => {
         positions.push([user.history[i][0][0], user.history[i][0][1]]);
       }
 
+      console.log(
+        positions.sort(
+          (a, b) =>
+            positions.filter((v) => v === a).length -
+            positions.filter((v) => v === b).length
+        )
+      );
+
       return positions
         .sort(
           (a, b) =>
@@ -95,6 +103,11 @@ export const History = ({ user, setUid }) => {
           </li>
         </ul>
       </nav>
+      <p style={{ width: "80%", textAlign: "left", margin: "2vh" }}>
+        {" "}
+        *El lloc habitual és el lloc on més vegades ha fet servir l'aplicació la
+        persona cuidada.
+      </p>
       <p className="date">
         {user.history.length ? (
           <strong>{user.history[0][2]}</strong>
