@@ -10,21 +10,27 @@ export const History = ({ user, setUid }) => {
         positions.push([user.history[i][0][0], user.history[i][0][1]]);
       }
 
-      console.log(
-        positions.sort(
-          (a, b) =>
-            positions.filter((v) => v === a).length -
-            positions.filter((v) => v === b).length
-        )
-      );
+      let mf = 1;
+      let m = 0;
+      let item;
 
-      return positions
-        .sort(
-          (a, b) =>
-            positions.filter((v) => v === a).length -
-            positions.filter((v) => v === b).length
-        )
-        .pop();
+      for (let i = 0; i < positions.length; i++) {
+        for (let j = i; j < positions.length; j++) {
+          if (
+            positions[i][0].toFixed(4) === positions[j][0].toFixed(4) &&
+            positions[i][1].toFixed(4) === positions[j][1].toFixed(4)
+          )
+            m++;
+          if (mf < m) {
+            mf = m;
+            item = positions[i];
+          }
+        }
+
+        m = 0;
+      }
+
+      return item;
     } else {
       return null;
     }
@@ -36,18 +42,32 @@ export const History = ({ user, setUid }) => {
       positions.push([user.history[i][0][0], user.history[i][0][1]]);
     }
 
-    return positions
-      .sort(
-        (a, b) =>
-          positions.filter((v) => v === a).length -
-          positions.filter((v) => v === b).length
-      )
-      .pop();
+    let mf = 1;
+    let m = 0;
+    let item;
+
+    for (let i = 0; i < positions.length; i++) {
+      for (let j = i; j < positions.length; j++) {
+        if (
+          positions[i][0].toFixed(4) === positions[j][0].toFixed(4) &&
+          positions[i][1].toFixed(4) === positions[j][1].toFixed(4)
+        )
+          m++;
+        if (mf < m) {
+          mf = m;
+          item = positions[i];
+        }
+      }
+
+      m = 0;
+    }
+
+    return item;
   };
 
   const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    var R = 6371; 
+    var dLat = deg2rad(lat2 - lat1); 
     var dLon = deg2rad(lon2 - lon1);
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -56,7 +76,7 @@ export const History = ({ user, setUid }) => {
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
+    var d = R * c; 
     return d.toFixed(2);
   };
 
@@ -95,8 +115,8 @@ export const History = ({ user, setUid }) => {
             <li>Històric</li>
           </Link>
           <Link to="/chart">
-              <li>Gràfic</li>
-            </Link>
+            <li>Gràfic</li>
+          </Link>
           <li
             onClick={() => {
               setUid("");
@@ -149,7 +169,7 @@ export const History = ({ user, setUid }) => {
                           Lloc: {moment[0][0]} , {moment[0][1]} -{" "}
                           <span>
                             &nbsp;
-                            {distances[idx]} del lloc habitual
+                            {distances[idx]}Km del lloc habitual
                           </span>
                         </a>
                       )}
